@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
 import { addTodo } from '../Redux/Actions/todosActions';
 
-const AddTodo = ({ tasks }) => {
-  let id = tasks.length + 1;
+/* const mapStateToProps = (state) => {
+  return {
+    tasks: state.tasks,
+  };
+}; */
+
+const AddTodo = () => {
   const [input, setInput] = useState('');
+  const tasks = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
 
+  let id = tasks.length + 1;
   return (
     <div className="Input-Container">
       <div className="add-element">
@@ -38,10 +45,4 @@ const AddTodo = ({ tasks }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    tasks: state.tasks,
-  };
-};
-
-export default connect(mapStateToProps, { addTodo })(AddTodo);
+export default connect()(AddTodo);

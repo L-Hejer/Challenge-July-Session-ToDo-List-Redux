@@ -1,9 +1,19 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 
 import List from './Todo';
 
-const TodoList = ({ tasks }) => {
+
+/* const mapStateToProps = (state) => {
+  return {
+    tasks: state.tasks,
+  };
+};
+ */
+
+
+const TodoList = () => {
+  const tasks = useSelector(state => state.tasks)
   return (
     <div className="Container">
       <div>
@@ -21,10 +31,5 @@ const TodoList = ({ tasks }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    tasks: state.tasks,
-  };
-};
 
-export default connect(mapStateToProps)(TodoList);
+export default connect()(TodoList);
