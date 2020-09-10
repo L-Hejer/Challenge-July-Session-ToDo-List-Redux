@@ -5,7 +5,7 @@ import { deleteTodo, completeTodo } from '../Redux/Actions/todosActions';
 
 import EditTodo from './EditTodo';
 
-const List = ({ task }) => {
+const Todo = ({ task }) => {
   const dispatch = useDispatch();
 
   return (
@@ -62,4 +62,4 @@ const List = ({ task }) => {
   );
 };
 
-export default connect()(List);
+export default connect()(Todo);

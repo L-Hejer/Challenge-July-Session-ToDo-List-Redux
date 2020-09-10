@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect, useSelector } from 'react-redux';
 
-import List from './Todo';
-
+import Todo from './Todo';
 
 /* const mapStateToProps = (state) => {
   return {
@@ -10,7 +9,6 @@ import List from './Todo';
   };
 };
  */
-
 
 const TodoList = () => {
   const tasks = useSelector(state => state.tasks)
@@ -23,7 +21,7 @@ const TodoList = () => {
       <div>
         <ul>
           {tasks.map((el, i) => (
-            <List task={el} key={i} />
+            <Todo task={el} key={i} />
           ))}
         </ul>
       </div>
