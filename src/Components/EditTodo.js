@@ -7,7 +7,7 @@ import { editTodo } from '../Redux/Actions/todosActions';
 
 const customStyles = {
   content: {
-    top: '50%',
+    top: '40%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
@@ -56,6 +56,9 @@ const EditTodo = ({ task }) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
+        <h3 style={{ margin: 0, padding: 0, color: '#7c7c7c' }}>
+          Edit To Do...
+        </h3>
         <form>
           <input
             type="text"

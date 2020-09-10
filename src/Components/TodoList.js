@@ -11,7 +11,7 @@ import Todo from './Todo';
  */
 
 const TodoList = () => {
-  const tasks = useSelector(state => state.tasks)
+  const tasks = useSelector((state) => state.tasks);
   return (
     <div className="Container">
       <div>
@@ -19,7 +19,7 @@ const TodoList = () => {
       </div>
 
       <div>
-        <ul>
+        <ul id="myUl">
           {tasks.map((el, i) => (
             <Todo task={el} key={i} />
           ))}
@@ -28,6 +28,5 @@ const TodoList = () => {
     </div>
   );
 };
-
 
 export default connect()(TodoList);

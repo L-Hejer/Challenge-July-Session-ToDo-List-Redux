@@ -125,3 +125,10 @@ li {
 #ModalInput:focus {
   outline: transparent;
 }
+
+#myUl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
